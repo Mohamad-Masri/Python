@@ -1,0 +1,31 @@
+You probably need to install it using one of (or something similar to) the following:
+
+sudo apt-get install python3-tk 
+
+sudo dnf install python3-tkinter
+I have been using Tkinter for a while now. Why don't you try this and let me know if it worked?
+
+try:
+    # for Python2
+    from Tkinter import *   ## notice capitalized T in Tkinter 
+except ImportError:
+    # for Python3
+    from tkinter import *   ## notice lowercase 't' in tkinter here
+Here is the reference link and here is the doc
+
+Better to check versions as suggested here:
+
+if sys.version_info[0] == 3:
+    # for Python3
+    from tkinter import *   ## notice lowercase 't' in tkinter here
+else:
+    # for Python2
+    from Tkinter import *   ## notice capitalized T in Tkinter
+Or you will get error ImportError: No module named tkinter
+
+EDIT 1: Just to make this answer more generic I borrowed the following from the comments. On Fedora please use either of the following commands
+
+sudo dnf install python3-tkinter-3.6.6-1.fc28.x86_64
+or
+
+sudo dnf install python3-tkinter
